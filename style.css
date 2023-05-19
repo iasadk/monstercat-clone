@@ -59,7 +59,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 9999999999999;
 }
 
 .loader-text {
@@ -137,7 +137,7 @@ nav img {
     top: 0;
     z-index: 10000;
     padding: 2rem;
-    transform: translateX(100%);
+    transform: translateX(160%);
     transition: all ease .3s;
 }
 
@@ -874,8 +874,9 @@ iframe {
     }
 
     .stream-icons {
-        width: 340px;
+        width: max-content;
         margin-top: 1rem;
+        /* display: none; */
     }
 
     .stream-icon img {
@@ -896,10 +897,12 @@ iframe {
     }
 
     .sidebar {
-        width: 320px;
+        width: 100%;
         
     }
-
+    .stream-icon.first-icon{
+        display: none;
+    }
     iframe {
         height: 100%;
     }
