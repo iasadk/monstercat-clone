@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: main-font;
-    src: url("iasad/Assets/font.woff");
+    src: url("Assets/font.woff");
 }
 
 :root {
@@ -35,7 +35,6 @@ html {
 }
 
 body {
-    height: 2000px;
     font-family: "Montserrat", "Helvetica", Arial, sans-serif;
     font-weight: normal;
     font-size: 18px;
@@ -70,28 +69,28 @@ body {
 
 @keyframes loadingAnim {
     0% {
-		transform: translate(0);
-	}
+        transform: translate(0);
+    }
 
-	20% {
-		transform: translate(-2px, 2px);
-	}
+    20% {
+        transform: translate(-2px, 2px);
+    }
 
-	40% {
-		transform: translate(-2px, -2px);
-	}
+    40% {
+        transform: translate(-2px, -2px);
+    }
 
-	60% {
-		transform: translate(2px, 2px);
-	}
+    60% {
+        transform: translate(2px, 2px);
+    }
 
-	80% {
-		transform: translate(2px, -2px);
-	}
+    80% {
+        transform: translate(2px, -2px);
+    }
 
-	100% {
-		transform: translate(0);
-	}
+    100% {
+        transform: translate(0);
+    }
 }
 
 header {
@@ -258,12 +257,25 @@ li .title i.close {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    object-fit: cover;
-    transform: scale(1.5);
+    object-fit: contain;
+    /* transform: scale(1.5); */
     background-position: center;
     filter: blur(4px) brightness(38%);
+    background-size: 1550px;
+    background-repeat: no-repeat;
+}
+
+
+.bg-img:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, .75));
 }
 
 .sidebar-social-icons {
@@ -281,16 +293,6 @@ li .title i.close {
 
 .sidebar-social-icons a img {
     width: 20px;
-}
-
-.bg-img:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, .75));
 }
 
 .fixed-social-icons {
@@ -666,6 +668,25 @@ iframe {
 
 }
 
+@media only screen and (min-width: 2560px) {
+    .fixed-social-icons {
+        right: 108px;
+    }
+}
+
+
+@media only screen and (max-width: 1492px) {
+    .fixed-social-icons {
+        right: 78px;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .fixed-social-icons {
+        right: 73px;
+    }
+}
+
 @media only screen and (max-width: 1184px) {
     .fixed-social-icons {
         display: none;
@@ -695,7 +716,11 @@ iframe {
     }
 
     .section {
-        width: 93%;
+        width: 90%;
+    }
+
+    .stream-socials {
+        width: 80%;
     }
 
     .left-section {
@@ -770,7 +795,7 @@ iframe {
     }
 }
 
-@media only screen and (max-width: 532px) {
+@media only screen and (max-width: 541px) {
 
     .left-section {
         display: flex;
@@ -810,8 +835,12 @@ iframe {
         padding: .5rem;
     }
 
+    .stream-icon.first-icon {
+        display: none;
+    }
+
     .footer {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 
 }
@@ -826,7 +855,7 @@ iframe {
     }
 
     .stream-icons {
-        width: 100%;
+        width: max-content;
         margin-top: 1rem;
     }
 
@@ -839,6 +868,10 @@ iframe {
         padding: .5rem;
     }
 
+    .stream-icon.first-icon {
+        display: none;
+    }
+
     .footer-middle {
         margin-bottom: 2rem;
     }
@@ -846,6 +879,11 @@ iframe {
     .footer {
         gap: 0;
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .sidebar {
+        width: 100%;
+
     }
 }
 
@@ -876,7 +914,6 @@ iframe {
     .stream-icons {
         width: max-content;
         margin-top: 1rem;
-        /* display: none; */
     }
 
     .stream-icon img {
@@ -890,7 +927,7 @@ iframe {
 
     .table-end-part {
         gap: 10px;
-        
+
     }
 
     .music-video .section-heading {
@@ -899,12 +936,24 @@ iframe {
 
     .sidebar {
         width: 100%;
-        
+
     }
-    .stream-icon.first-icon{
+
+    .stream-icon.first-icon {
         display: none;
     }
+
     iframe {
         height: 100%;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .footer-link {
+        font-size: 1rem;
+    }
+
+    .right-para {
+        width: 270px;
     }
 }
